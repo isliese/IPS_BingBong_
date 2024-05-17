@@ -12,11 +12,24 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.tabs.TabLayout;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.HashMap;
+import java.util.Map;
+
+import android.os.Bundle;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
+
+    // 날짜별 일기 데이터를 저장할 HashMap 초기화
+    HashMap<String, String> diaryEntries = new HashMap<>();
+
     //    CalendarView calendarView;
     Calendar calendar;
     CalendarView calendarView;
@@ -36,6 +49,10 @@ public class MainActivity extends AppCompatActivity {
 
         calendar = Calendar.getInstance();
 
+
+        initializeDiaryEntries();
+
+
         // Set the initial date and update the button text
         setDate(23, 5, 2024); // 원하는 날짜로 설정
         getDate();  // Button 텍스트를 현재 날짜로 업데이트
@@ -48,6 +65,43 @@ public class MainActivity extends AppCompatActivity {
                 getDate();  // 새로운 날짜로 Button 텍스트를 업데이트
             }
         });
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+
+        // Adding Calendar tab
+        TabLayout.Tab tabCalendar = tabLayout.newTab();
+        tabCalendar.setText("Calendar");
+        tabLayout.addTab(tabCalendar);
+
+        // Adding Forest tab
+        TabLayout.Tab tabForest = tabLayout.newTab();
+        tabForest.setText("Forest");
+        tabLayout.addTab(tabForest);
+
+        // Adding Recommend tab
+        TabLayout.Tab tabRecommend = tabLayout.newTab();
+        tabRecommend.setText("Recommend");
+        tabLayout.addTab(tabRecommend);
+
+        // Optional: Set tab text appearance if needed
+        for (int i = 0; i < tabLayout.getTabCount(); i++) {
+            TabLayout.Tab tab = tabLayout.getTabAt(i);
+            if (tab != null) {
+                TextView textView = new TextView(this);
+                textView.setText(tab.getText());
+                textView.setTextSize(17);  // Set desired text size
+                textView.setTextColor(getResources().getColor(R.color.black));  // Set desired text color
+                textView.setGravity(android.view.Gravity.CENTER);
+                tab.setCustomView(textView);
+            }
+        }
+
+    }
+
+    private void initializeDiaryEntries() {
+        // 예제 데이터 추가
+        diaryEntries.put("2024.05.23", "오늘은 좋은 날씨였다.");
+        diaryEntries.put("2024.05.24", "친구와 함께 산책을 했다.");
+        diaryEntries.put("2024.05.25", "책을 읽고 휴식을 취했다.");
     }
 
     public void getDate() {
@@ -67,6 +121,17 @@ public class MainActivity extends AppCompatActivity {
         calendarView.setDate(milli, true, true);
     }
 
+
+    // 해시맵에 있는 날짜별 데이터를 보여주는 함수
+    private void displayDiaryEntry(int day, int month, int year) {
+        String dateKey = String.format(Locale.getDefault(), "%04d.%02d.%02d", year, month, day);
+        String entry = diaryEntries.get(dateKey);
+        if (entry != null) {
+            Toast.makeText(this, entry, Toast.LENGTH_LONG).show(); // 데이터를 Toast로 표시
+        } else {
+            Toast.makeText(this, "해당 날짜의 데이터가 없습니다.", Toast.LENGTH_LONG).show();
+        }
+    }
 }
 
 
