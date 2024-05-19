@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".write_diaryFragment"
+    android:fillViewport="true"
+    android:scrollbars="vertical"
+    >
+
+        <!-- TODO: Update blank fragment layout -->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+
+                >
+
+                <TextView
+                    android:id="@+id/veiwDatePick"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="date"
+                    android:textStyle="bold"
+                    android:textSize="25sp"/>
+
+                <EditText
+                    android:id="@+id/diary_text"
+                    android:layout_width="390dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="7"
+                    android:layout_gravity="center"
+                    android:background="@drawable/diary_text"
+                    android:gravity="top"
+                    android:hint="오늘의 기록을 작성해주세요."
+                    android:inputType="textMultiLine"
+                    android:padding="8dp"
+                    android:privateImeOptions="defaultInputmode=korean"
+                    android:scrollbars="vertical"
+                    android:scrollHorizontally="false" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:layout_gravity="center">
+                <ImageButton
+                    android:id="@+id/addphoto"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="top"
+                    android:background="@drawable/add_photo" />
+
+                <Button
+                    android:id="@+id/write_diary"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/write_btn"
+                    android:layout_marginLeft="230dp"
+                    android:text="작성"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="8dp"
+                    />
+                </LinearLayout>
+
+        </LinearLayout>
+
+
+
+</ScrollView>

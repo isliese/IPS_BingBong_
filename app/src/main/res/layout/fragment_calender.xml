@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/calender"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".HomeFragment"
+    android:layout_gravity="center"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        tools:context=".MainActivity">
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:firstDayOfWeek="2"
+            android:maxDate="12/31/2025"
+            android:minDate="01/01/2024" />
+
+        <!-- 버튼의 초기 텍스트가 "2024.01.01 기록 확인하기"로 설정되어 있지만, 날짜를 선택하면 버튼의 텍스트가 선택된 날짜로 바뀐다. -->
+        <Button
+            android:id="@+id/dateButton"
+            android:layout_width="284dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_background_gray"
+            android:text="2024.01.01 기록 확인하기"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

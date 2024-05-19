@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".music_recommend">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+
+        >
+
+        <Button
+            android:id="@+id/music"
+            android:layout_width="140dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/select_recommend"
+            android:text="Musci"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            />
+
+        <Button
+            android:id="@+id/book"
+            android:layout_width="140dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_gravity="center"
+            android:text="Book"
+            android:textColor="@color/black"
+            android:background="@drawable/another_select_recommend"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+
+    <View
+        android:layout_width="390dp"
+        android:layout_height="550dp"
+        android:background="@drawable/recommend_music"
+        android:layout_gravity="center">
+
+
+
+    </View>
+    </LinearLayout>
+
+</FrameLayout>

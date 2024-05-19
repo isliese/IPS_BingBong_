@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/tab_home"
+        android:title="Home"
+        android:icon="@drawable/ex_home_btn"
+        android:enabled="true"
+        />
+    <item
+        android:id="@+id/tab_diary"
+        android:title="Diary"
+        android:icon="@drawable/write_diary_btn"
+        android:enabled="true"
+        android:checked="true"
+        />
+
+    <item
+        android:id="@+id/tab_profile"
+        android:title="My"
+        android:icon="@drawable/profile_btn"
+        android:enabled="true"/>
+
+
+</menu>
