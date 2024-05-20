@@ -12,6 +12,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.bumptech.glide.Glide;
+import android.widget.ImageButton;
+
 
 public class music_recommend extends Fragment {
 
@@ -22,6 +25,18 @@ public class music_recommend extends Fragment {
 
         // book 버튼 찾기
         Button book_button = view.findViewById(R.id.book);
+
+        ImageButton musicImgButton1 = view.findViewById(R.id.music_img1);
+        String music_imageUrl1 = "https://i.namu.wiki/i/N0P5TbMbpc2spx_zCQlDip9WM-7ZoO1_lo2IT5qp2-Hmr0gHmrokOLwy2K1OdG4Xtc6wQEYv6vaavMMMGXaPxA.webp";
+        Glide.with(requireContext()).load(music_imageUrl1).into(musicImgButton1);
+
+        ImageButton musicImgButton2 = view.findViewById(R.id.music_img2);
+        String music_imageUrl2 = "https://i.namu.wiki/i/N0P5TbMbpc2spx_zCQlDip9WM-7ZoO1_lo2IT5qp2-Hmr0gHmrokOLwy2K1OdG4Xtc6wQEYv6vaavMMMGXaPxA.webp";
+        Glide.with(requireContext()).load(music_imageUrl2).into(musicImgButton2);
+
+        ImageButton musicImgButton3 = view.findViewById(R.id.music_img3);
+        String music_imageUrl3 = "https://i.namu.wiki/i/N0P5TbMbpc2spx_zCQlDip9WM-7ZoO1_lo2IT5qp2-Hmr0gHmrokOLwy2K1OdG4Xtc6wQEYv6vaavMMMGXaPxA.webp";
+        Glide.with(requireContext()).load(music_imageUrl3).into(musicImgButton3);
 
         book_button.setOnClickListener(new View.OnClickListener() {
             @Override
