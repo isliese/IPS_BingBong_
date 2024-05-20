@@ -41,7 +41,6 @@
                     android:hint="오늘의 기록을 작성해주세요."
                     android:inputType="textMultiLine"
                     android:padding="8dp"
-                    android:privateImeOptions="defaultInputmode=korean"
                     android:scrollbars="vertical"
                     android:scrollHorizontally="false" />
 
