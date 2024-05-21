@@ -14,23 +14,23 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="30dp">
 
         <TextView
             android:id="@+id/veiwDatePick"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:gravity="center"
             android:text="날짜 넣을 거임"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textSize="20sp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center"
-            android:gravity="">
+            >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -83,7 +83,7 @@
 
 
                 <TextView
-                    android:id="@+id/user_email"
+                    android:id="@+id/written_diary_text"
                     android:layout_width="390dp"
                     android:layout_height="480dp"
                     android:layout_gravity="center"

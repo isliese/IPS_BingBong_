@@ -12,34 +12,35 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-public class Forest extends Fragment {
+public class Tree_Forest extends Fragment {
 
-    private ImageButton eachTreeButton;
+    private ImageButton entireForestButton;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_forest, container, false);
+        View view = inflater.inflate(R.layout.fragment_tree__forest, container, false);
 
-        eachTreeButton = view.findViewById(R.id.each_tree);
-        eachTreeButton.setOnClickListener(new View.OnClickListener() {
+        entireForestButton = view.findViewById(R.id.entire_forest_button);
+        entireForestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Tree_Forest 프래그먼트로 이동
+                // 다른 프래그먼트로 이동
                 FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                Tree_Forest treeForest = new Tree_Forest();
+                // Forest 프래그먼트 인스턴스 생성
+                Forest forestFragment = new Forest();
 
-                // 프래그먼트 전환 시 배경 초기화
-                requireActivity().getWindow().setBackgroundDrawable(null);
+                // fragment_home_content 영역을 비웁니다.
+                fragmentTransaction.remove(fragmentManager.findFragmentById(R.id.fragment_home_content));
 
-                fragmentTransaction.replace(R.id.fragment_home_content, treeForest);
+                // fragment_home_content에 forestFragment로 전환
+                fragmentTransaction.add(R.id.fragment_home_content, forestFragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
         });
-
         return view;
     }
 }

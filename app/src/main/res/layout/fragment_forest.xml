@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/forest"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Forest">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:id="@+id/tree_background_img"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/entire_forest_background" />
 
-</FrameLayout>
+    <!-- 키워드가 하나 생성될 때마다 나무 생성 -->
+    <ImageButton
+        android:id="@+id/each_tree"
+        android:layout_width="81dp"
+        android:layout_height="74dp"
+        android:src="@drawable/entire_forest_tree"
+        android:scaleType="fitCenter"
+        android:background="@null"
+        app:layout_constraintHorizontal_bias="0.284"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.268"
+        tools:ignore="MissingConstraints" />
+
+
+    <!-- 이미지 컨테이너 -->
+    <FrameLayout
+        android:id="@+id/imageContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/each_tree" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

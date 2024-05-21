@@ -1,5 +1,7 @@
 package com.example.fouryou;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,6 +25,10 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+
+import android.app.DatePickerDialog;
+import android.widget.DatePicker;
+import java.util.Calendar;
 
 
 import com.example.fouryou.databinding.FragmentHomeBinding;
@@ -48,8 +54,12 @@ public class write_diaryFragment extends Fragment {
         diaryText = view.findViewById(R.id.diary_text);
         writeDiaryButton = view.findViewById(R.id.write_diary);
 
+        // 현재 날짜 설정
         String currentDate = getCurrentDate();
         viewDatePick.setText(currentDate);
+
+        // TextView를 클릭하여 DatePickerDialog를 엽니다.
+        viewDatePick.setOnClickListener(v -> showDatePickerDialog());
 
         writeDiaryButton.setOnClickListener(v -> {
             saveDiaryToServer();
@@ -58,6 +68,24 @@ public class write_diaryFragment extends Fragment {
         return view;
     }
 
+    private void showDatePickerDialog() {
+        final Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                getContext(),
+                (view, year1, monthOfYear, dayOfMonth) -> {
+                    // 선택한 날짜를 TextView에 설정
+                    String selectedDate = String.format(Locale.getDefault(), "%d-%02d-%02d", year1, monthOfYear + 1, dayOfMonth);
+                    viewDatePick.setText(selectedDate);
+                },
+                year, month, day);
+        datePickerDialog.show();
+    }
+
+
     private String getCurrentDate() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
         return dateFormat.format(new Date());
@@ -65,7 +93,17 @@ public class write_diaryFragment extends Fragment {
     private void saveDiaryToServer() {
         String content = diaryText.getText().toString();
         String date = viewDatePick.getText().toString();
-        String userEmail = "user@example.com"; // 실제 사용자의 이메일을 가져와야 함
+
+
+        // SharedPreferences를 사용하여 사용자의 이메일 가져오기
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("user_info", Context.MODE_PRIVATE);
+        String userEmail = sharedPreferences.getString("userEmail", "");
+
+
+        if (userEmail.isEmpty()) {
+            Toast.makeText(requireContext(), "사용자 이메일을 가져올 수 없습니다.", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         // Response 리스너 설정
         Response.Listener<String> responseListener = response -> {
