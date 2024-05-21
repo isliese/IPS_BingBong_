@@ -15,6 +15,8 @@ import java.util.Calendar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class Calendar_Page extends Fragment {
 
@@ -44,8 +46,20 @@ public class Calendar_Page extends Fragment {
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // 버튼 클릭 시 해당 날짜의 기록을 확인하는 동작을 수행할 수 있습니다.
-                Toast.makeText(getContext(), selectedMeetingDate + " 기록 확인", Toast.LENGTH_SHORT).show();
+                // 다른 프래그먼트로 이동
+                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                Bundle bundle = new Bundle();
+                bundle.putString("selectedDate", selectedMeetingDate);
+
+                Edit_Diary editDiaryFragment = new Edit_Diary();
+                editDiaryFragment.setArguments(bundle);
+
+                fragmentTransaction.replace(R.id.frame_main, editDiaryFragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+
             }
         });
 

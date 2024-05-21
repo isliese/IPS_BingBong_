@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".write_diaryFragment"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/veiwDatePick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:text="날짜 넣을 거임"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#F3F3F3"
+                    android:text="😮"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="10dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeMaxTextSize="18sp"
+                    android:background="@drawable/keyword_textview"
+                    android:text="keyword_1"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeMaxTextSize="18sp"
+                    android:background="@drawable/keyword_textview"
+                    android:layout_marginStart="10dp"
+                    android:text="keyword_2"
+                    android:gravity="center"
+                    />
+
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+
+                <TextView
+                    android:id="@+id/user_email"
+                    android:layout_width="390dp"
+                    android:layout_height="480dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/diary_text"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:padding="8dp"
+                    android:privateImeOptions="defaultInputmode=korean"
+                    android:scrollbars="vertical"
+                    android:scrollHorizontally="false"
+                    android:text="diary"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp">
+                    <ImageButton
+                        android:id="@+id/addphoto"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/add_photo" />
+
+                    <Button
+                        android:id="@+id/delete_diary"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/delete_diary_btn"
+                        android:layout_marginLeft="160dp"
+                        android:text="삭제"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_gravity="center"
+                        />
+
+                    <Button
+                        android:id="@+id/edit_diary"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/write_btn"
+                        android:layout_marginLeft="10dp"
+                        android:text="완료"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>
