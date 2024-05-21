@@ -6,6 +6,7 @@
     android:id="@+id/forest"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".Forest">
 
     <ImageView
@@ -13,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/entire_forest_background" />
+        android:background="@drawable/entire_forest_background" />
 
     <!-- 키워드가 하나 생성될 때마다 나무 생성 -->
     <ImageButton

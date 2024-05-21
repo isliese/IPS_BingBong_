@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/forest_illustration2" />
+        android:background="@drawable/forest_illustration2" />
     <!-- 키워드에 해당하는 나무 -->
 
     <!-- 날짜에 해당하는 나뭇잎 -->

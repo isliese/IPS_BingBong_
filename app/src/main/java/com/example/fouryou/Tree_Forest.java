@@ -14,29 +14,22 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class Tree_Forest extends Fragment {
 
-    private ImageButton entireForestButton;
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tree__forest, container, false);
 
-        entireForestButton = view.findViewById(R.id.entire_forest_button);
-        entireForestButton.setOnClickListener(new View.OnClickListener() {
+        ImageButton Backforest = view.findViewById(R.id.entire_forest_button);
+        Backforest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // 다른 프래그먼트로 이동
-                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                // 새로운 Fragment 인스턴스
+                Fragment forest  = new Forest();
+
+                FragmentManager fragmentManager = getParentFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                // Forest 프래그먼트 인스턴스 생성
-                Forest forestFragment = new Forest();
-
-                // fragment_home_content 영역을 비웁니다.
-                fragmentTransaction.remove(fragmentManager.findFragmentById(R.id.fragment_home_content));
-
-                // fragment_home_content에 forestFragment로 전환
-                fragmentTransaction.add(R.id.fragment_home_content, forestFragment);
+                fragmentTransaction.replace(R.id.fragment_home_content, forest);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
