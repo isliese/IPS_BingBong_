@@ -48,6 +48,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/keyword1"
                     android:layout_width="100dp"
                     android:layout_height="35dp"
                     android:layout_marginStart="10dp"
@@ -60,6 +61,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/keyword2"
                     android:layout_width="100dp"
                     android:layout_height="35dp"
                     android:autoSizeTextType="uniform"
@@ -85,7 +87,7 @@
                 <TextView
                     android:id="@+id/written_diary_text"
                     android:layout_width="390dp"
-                    android:layout_height="480dp"
+                    android:layout_height="500dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/diary_text"
@@ -94,7 +96,7 @@
                     android:padding="8dp"
                     android:privateImeOptions="defaultInputmode=korean"
                     android:scrollbars="vertical"
-                    android:scrollHorizontally="false"
+                    android:textSize="15dp"
                     android:text="diary"/>
 
                 <LinearLayout

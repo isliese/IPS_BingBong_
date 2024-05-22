@@ -32,6 +32,10 @@ public class Edit_Diary extends Fragment {
     private TextView viewDatePick;
     private TextView diaryTextView;
 
+    // 추가된 부분: 키워드를 표시하는 텍스트뷰 변수
+    private TextView keyword1;
+    private TextView keyword2;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -40,6 +44,10 @@ public class Edit_Diary extends Fragment {
         viewDatePick = view.findViewById(R.id.veiwDatePick);
         diaryTextView = view.findViewById(R.id.written_diary_text);
 
+        // 추가된 부분: 키워드를 표시하는 텍스트뷰 초기화
+        keyword1 = view.findViewById(R.id.keyword1);
+        keyword2 = view.findViewById(R.id.keyword2);
+
         Bundle bundle = getArguments();
 
         if (bundle != null) {
@@ -47,9 +55,13 @@ public class Edit_Diary extends Fragment {
             viewDatePick.setText(selectedDate);
             // 선택한 날짜에 해당하는 일기를 가져옴
             fetchDiary(selectedDate);
+            // 선택한 날짜에 해당하는 키워드를 가져옴
+            fetchKeywords(selectedDate); // 수정된 부분: 키워드 가져오는 메서드 호출
         } else {
             String currentDate = getCurrentDate();
             viewDatePick.setText(currentDate);
+            // 현재 날짜에 해당하는 키워드를 가져옴
+            fetchKeywords(currentDate); // 수정된 부분: 키워드 가져오는 메서드 호출
         }
 
         return view;
@@ -111,5 +123,58 @@ public class Edit_Diary extends Fragment {
         // Volley 요청 큐에 요청 추가
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         queue.add(diaryRequest);
+    }
+
+    // 추가된 메서드: 선택한 날짜에 해당하는 키워드를 가져오는 메서드
+    private void fetchKeywords(String date) {
+        // SharedPreferences에서 사용자 이메일 가져오기
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("user_info", Context.MODE_PRIVATE);
+        String userEmail = sharedPreferences.getString("userEmail", "");
+
+        // 키워드 가져오기 요청 생성
+        TakeOutTagRequest keywordRequest = new TakeOutTagRequest(userEmail, date,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("ServerResponse", response);
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response);
+                            boolean success = jsonResponse.getBoolean("success");
+                            if (success) {
+                                String keyword1Value = jsonResponse.getString("Keyword_Tag1");
+                                String keyword2Value = jsonResponse.getString("Keyword_Tag2");
+
+                                // Set keywords to TextViews
+                                keyword1.setText(keyword1Value);
+                                keyword2.setText(keyword2Value);
+                            } else {
+                                String message = jsonResponse.getString("message");
+                                Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(requireContext(), "키워드를 가져오는 중 JSON 오류가 발생했습니다.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                        String errorMsg;
+                        if (error.networkResponse != null && error.networkResponse.data != null) {
+                            errorMsg = new String(error.networkResponse.data);
+                        } else {
+                            errorMsg = error.getMessage();
+                        }
+                        Log.e("VolleyError", errorMsg);
+                        Toast.makeText(requireContext(), "키워드를 가져오는 중 오류가 발생했습니다: " + errorMsg, Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+
+        // Volley 요청 큐에 요청 추가
+        RequestQueue queue = Volley.newRequestQueue(requireContext());
+        queue.add(keywordRequest);
     }
 }

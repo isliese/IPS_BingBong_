@@ -3,10 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/forest"
+    android:id="@+id/tree_forest"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".Forest">
 
     <ImageView
@@ -14,27 +13,75 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:background="@drawable/entire_forest_background" />
+        android:background="@drawable/forest_illustration2" />
+    <!-- 키워드에 해당하는 나무 -->
 
-    <!-- 키워드가 하나 생성될 때마다 나무 생성 -->
-    <ImageButton
-        android:id="@+id/each_tree"
-        android:layout_width="81dp"
-        android:layout_height="74dp"
-        android:src="@drawable/entire_forest_tree"
-        android:scaleType="fitCenter"
-        android:background="@null"
-        app:layout_constraintHorizontal_bias="0.284"
+    <!-- 날짜에 해당하는 나뭇잎 -->
+    <ImageView
+        android:id="@+id/view_tree"
+        android:layout_width="374dp"
+        android:layout_height="607dp"
+        android:src="@drawable/tree_illustration"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.268"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="1.0" />
+
+    <!-- 나뭇잎을 포함하는 LinearLayout -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="60dp">
+
+        <!-- 날짜에 해당하는 나뭇잎 -->
+        <ImageView
+            android:id="@+id/leaf1"
+            android:layout_width="130dp"
+            android:layout_height="70dp"
+            android:src="@drawable/leaf_2"
+            android:onClick="showDateOrder"
+            app:layout_constraintHorizontal_bias="0.205"
+            app:layout_constraintVertical_bias="0.534"
+            android:layout_marginTop="50dp"/>
+
+        <!-- 날짜에 해당하는 나뭇잎 -->
+        <ImageView
+            android:id="@+id/leaf2"
+            android:layout_width="107dp"
+            android:layout_height="65dp"
+            android:src="@drawable/leaf_1"
+            android:onClick="showDateOrder"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintVertical_bias="0.549"
+            android:layout_marginTop="5dp"/>
+
+        <!-- 날짜에 해당하는 나뭇잎 -->
+        <ImageView
+            android:id="@+id/leaf3"
+            android:layout_width="109dp"
+            android:layout_height="62dp"
+            android:src="@drawable/leaf_3"
+            android:onClick="showDateOrder"
+            android:contentDescription="날짜"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintVertical_bias="0.615"
+            android:layout_marginTop="100dp"/>
+    </LinearLayout>
+
 
 
     <!-- 이미지 컨테이너 -->
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/imageContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintTop_toBottomOf="@+id/each_tree" />
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/view_tree" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

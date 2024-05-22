@@ -7,6 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -92,9 +94,8 @@ public class write_diaryFragment extends Fragment {
     }
     private void saveDiaryToServer() {
         String content = diaryText.getText().toString();
-        String date = viewDatePick.getText().toString();
+        String selectedDate = viewDatePick.getText().toString();
 
-        // SharedPreferences를 사용하여 사용자의 이메일 가져오기
         SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("user_info", Context.MODE_PRIVATE);
         String userEmail = sharedPreferences.getString("userEmail", "");
 
@@ -103,19 +104,16 @@ public class write_diaryFragment extends Fragment {
             return;
         }
 
-        // Response 리스너 설정
         Response.Listener<String> responseListener = response -> {
             try {
+                // 서버에서 반환한 응답을 로그로 출력합니다.
+                Log.d("ServerResponse", response);
                 JSONObject jsonObject = new JSONObject(response);
                 boolean success = jsonObject.getBoolean("success");
                 if (success) {
-                    // 저장 성공 시 HomeFragment로 전환
                     switchToHomeFragment();
-                    // EditText의 내용을 지웁니다.
                     diaryText.setText("");
                 } else {
-                    // 저장 실패 시 처리
-                    // 서버에서 반환한 메시지에 따라 적절한 안내를 사용자에게 보여줍니다.
                     String message = jsonObject.getString("message");
                     if (message != null && !message.isEmpty()) {
                         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
@@ -129,20 +127,9 @@ public class write_diaryFragment extends Fragment {
             }
         };
 
-        // DiaryRequest 생성 및 큐에 추가
-        DiaryRequest diaryRequest = new DiaryRequest(userEmail, date, content, responseListener); // 수정된 부분: date를 selectedDate로 변경
+        DiaryRequest diaryRequest = new DiaryRequest(userEmail, selectedDate, content, responseListener);
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         queue.add(diaryRequest);
-
-
-        DiaryPassRequest diaryPassRequest = new DiaryPassRequest(content, responseListener);
-        RequestQueue queue1 = Volley.newRequestQueue(requireContext());
-        queue1.add(diaryPassRequest);
-
-        // Tag 테이블에 값을 넣는 요청 생성 및 큐에 추가
-        UpdateTagTableRequest tagRequest = new UpdateTagTableRequest(userEmail, date, "keywordTag1", "keywordTag2", "emotionTag", responseListener);
-        RequestQueue tagQueue = Volley.newRequestQueue(requireContext());
-        tagQueue.add(tagRequest);
     }
 
     private void switchToHomeFragment() {
