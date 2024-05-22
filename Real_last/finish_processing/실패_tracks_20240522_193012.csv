@@ -1,0 +1,21 @@
+keyword,valence,year,acousticness,artists,danceability,duration_ms,energy,explicit,id,instrumentalness,key,liveness,loudness,mode,name,popularity,release_date,speechiness,tempo,cluster_label
+실패,0.418,2012,0.211,Bruno Mars,0.705,228573,0.784,0,30raivfq7rSt5nKltiHfzG,4.3e-06,2,0.0813,-4.351,1,Moonshine,58,2012-12-07,0.0279,104.98,10
+실패,0.632,2016,0.034,Bruno Mars,0.818,225983,0.803,0,6b8Be6ljOzmkOmFslEb23P,0.0,1,0.153,-4.282,1,24K Magic,82,2016-11-17,0.0797,106.97,10
+실패,0.926,2017,0.0185,"Bruno Mars, Cardi B",0.704,217289,0.859,0,3Vo4wInECJQuz9BIBMOu8i,0.0,5,0.0215,-4.877,0,Finesse - Remix; feat. Cardi B,74,2017-12-20,0.0996,105.115,0
+실패,0.937,2012,0.0412,Bruno Mars,0.874,178560,0.692,0,55h7vJchibLdUkxdlX3fK7,7.24e-05,5,0.324,-5.28,0,Treasure,80,2012-12-07,0.0431,116.017,0
+실패,0.659,2010,0.297,"Travie McCoy, Bruno Mars",0.633,211160,0.673,0,2qPUnoasNe4Ep43emVXEig,0.0,6,0.206,-6.403,0,Billionaire (feat. Bruno Mars),72,2010-06-07,0.258,86.776,0
+실패,0.865,2016,0.0392,Bruno Mars,0.662,250080,0.705,0,6ObpR8ek44tvWefQRcSo8K,2.38e-06,1,0.105,-6.56,0,Calling All My Lovelies,62,2016-11-17,0.0399,159.996,10
+실패,0.367,2018,0.00381,"Gucci Mane, Bruno Mars, Kodak Black",0.8,204665,0.578,0,0QIjsbm2fh1cJ45XO9eGqq,0.0,4,0.359,-5.144,0,Wake Up in the Sky,76,2018-09-14,0.0485,143.01,0
+실패,0.86,2016,0.013,Bruno Mars,0.853,206693,0.56,0,0KKkJNfGyhkQ5aFogxQAPU,0.0,1,0.0944,-4.961,1,That's What I Like,86,2016-11-17,0.0406,134.066,10
+실패,0.65,2019,0.0642,"Cardi B, Bruno Mars",0.747,200890,0.57,0,0PG9fbaaHFHfre2gUVo7AN,0.0,1,0.0832,-6.711,1,Please Me,76,2019-02-15,0.081,133.992,10
+실패,0.301,2016,0.196,Bruno Mars,0.578,261240,0.574,0,0kN8xEmgMW9mh7UmDYHlJP,0.0,2,0.083,-6.209,1,Versace on the Floor,79,2016-11-17,0.0454,174.152,2
+실패,0.823,2010,0.263,Bruno Mars,0.658,148448,0.762,0,5MMLS3xm12D7N26xlfFApr,0.0,10,0.127,-3.028,0,Runaway Baby,72,2010-10-05,0.0425,163.864,0
+실패,0.531,2011,0.0525,"Snoop Dogg, Wiz Khalifa, Bruno Mars",0.715,207333,0.655,0,5HQVUIKwCEXpe7JIHyY734,0.0,0,0.115,-6.425,1,"Young, Wild & Free (feat. Bruno Mars)",76,2011-10-11,0.137,95.078,10
+실패,0.245,2010,0.148,Bruno Mars,0.704,222091,0.558,0,2tJulUYLDKOg9XrtVkMgcJ,0.0,2,0.107,-7.273,0,Grenade,78,2010-10-05,0.0542,110.444,2
+실패,0.0784,2010,0.511,Bruno Mars,0.498,217867,0.59,0,161DnLWsx1i3u1JT05lzqU,0.0,1,0.107,-4.721,0,Talking to the Moon,82,2010-10-05,0.032,145.867,2
+실패,0.743,2010,0.386,"B.o.B, Bruno Mars",0.688,268320,0.853,0,59dLtGBS26x7kc0rHbaPrq,0.0,10,0.0862,-5.814,1,Nothin' on You (feat. Bruno Mars),77,2010-04-27,0.0493,103.993,0
+실패,0.719,2021,0.182,"Bruno Mars, Anderson .Paak, Silk Sonic",0.586,242096,0.616,0,4pryE6cN2gFL1FVF5fYINl,0.0,5,0.0927,-7.964,1,Leave The Door Open,71,2021-11-12,0.0324,148.088,10
+실패,0.387,2012,0.932,Bruno Mars,0.612,213827,0.28,0,0nJW01T7XtvILxQgC5J7Wh,0.0,0,0.088,-8.648,1,When I Was Your Man,87,2012-12-07,0.0434,72.795,8
+실패,0.867,2012,0.049,Bruno Mars,0.726,233478,0.698,0,3w3y8KPTfNeOKPiqUTakBh,0.0,5,0.309,-4.165,1,Locked out of Heaven,89,2012-12-07,0.0431,143.994,10
+실패,0.424,2010,0.0134,Bruno Mars,0.635,220734,0.841,0,7BqBn9nzAq8spo5e7cZ0dJ,0.0,5,0.0622,-5.379,1,Just the Way You Are,84,2010-10-05,0.0422,109.021,2
+실패,0.928,2015,0.00801,"Mark Ronson, Bruno Mars",0.856,269667,0.609,0,32OlwWuMpZ6b0aN2RZOeMS,8.15e-05,0,0.0344,-7.223,1,Uptown Funk (feat. Bruno Mars),84,2015-01-12,0.0824,114.988,10
