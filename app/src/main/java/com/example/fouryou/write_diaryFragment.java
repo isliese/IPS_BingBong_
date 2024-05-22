@@ -133,6 +133,16 @@ public class write_diaryFragment extends Fragment {
         DiaryRequest diaryRequest = new DiaryRequest(userEmail, date, content, responseListener); // 수정된 부분: date를 selectedDate로 변경
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         queue.add(diaryRequest);
+
+
+        DiaryPassRequest diaryPassRequest = new DiaryPassRequest(content, responseListener);
+        RequestQueue queue1 = Volley.newRequestQueue(requireContext());
+        queue1.add(diaryPassRequest);
+
+        // Tag 테이블에 값을 넣는 요청 생성 및 큐에 추가
+        UpdateTagTableRequest tagRequest = new UpdateTagTableRequest(userEmail, date, "keywordTag1", "keywordTag2", "emotionTag", responseListener);
+        RequestQueue tagQueue = Volley.newRequestQueue(requireContext());
+        tagQueue.add(tagRequest);
     }
 
     private void switchToHomeFragment() {
