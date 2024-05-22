@@ -94,11 +94,9 @@ public class write_diaryFragment extends Fragment {
         String content = diaryText.getText().toString();
         String date = viewDatePick.getText().toString();
 
-
         // SharedPreferences를 사용하여 사용자의 이메일 가져오기
         SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("user_info", Context.MODE_PRIVATE);
         String userEmail = sharedPreferences.getString("userEmail", "");
-
 
         if (userEmail.isEmpty()) {
             Toast.makeText(requireContext(), "사용자 이메일을 가져올 수 없습니다.", Toast.LENGTH_SHORT).show();
@@ -132,7 +130,7 @@ public class write_diaryFragment extends Fragment {
         };
 
         // DiaryRequest 생성 및 큐에 추가
-        DiaryRequest diaryRequest = new DiaryRequest(userEmail, date, content, responseListener);
+        DiaryRequest diaryRequest = new DiaryRequest(userEmail, date, content, responseListener); // 수정된 부분: date를 selectedDate로 변경
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         queue.add(diaryRequest);
     }

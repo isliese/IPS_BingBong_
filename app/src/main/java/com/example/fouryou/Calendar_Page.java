@@ -50,21 +50,19 @@ public class Calendar_Page extends Fragment {
                 FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
+                // 선택한 날짜를 Bundle에 담아서 Edit_Diary 프래그먼트로 전달
                 Bundle bundle = new Bundle();
                 bundle.putString("selectedDate", selectedMeetingDate);
 
                 Edit_Diary editDiaryFragment = new Edit_Diary();
                 editDiaryFragment.setArguments(bundle);
 
-                write_diaryFragment writeDiaryFragment = new write_diaryFragment();
-                writeDiaryFragment.setArguments(bundle);
-
                 fragmentTransaction.replace(R.id.frame_main, editDiaryFragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
-
             }
         });
+
 
         return view;
     }
