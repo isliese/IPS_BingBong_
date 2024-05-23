@@ -85,7 +85,7 @@
                             android:id="@+id/music_title1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Girls Never Die"
+                            android:text="Brave"
                             android:textColor="@color/black"
                             android:textSize="20sp"
                             android:layout_marginBottom="10dp"
@@ -95,7 +95,7 @@
                             android:id="@+id/music_singer1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TripleS"
+                            android:text="TWICE"
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:layout_marginBottom="20dp" />
@@ -104,7 +104,7 @@
                             android:id="@+id/tag1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="분노"
+                            android:text="시험"
                             android:textColor="#008080"
                             android:textStyle="bold"
                             android:textSize="17sp" />
@@ -143,7 +143,7 @@
                             android:id="@+id/music_title2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Girls Never Die"
+                            android:text="Perfect Night"
                             android:textColor="@color/black"
                             android:textSize="20sp"
                             android:layout_marginBottom="10dp" />
@@ -152,7 +152,7 @@
                             android:id="@+id/music_singer2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TripleS"
+                            android:text="LE SSERAFIM"
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:layout_marginBottom="20dp" />
@@ -161,7 +161,7 @@
                             android:id="@+id/tag2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="분노"
+                            android:text="시작"
                             android:textColor="#008080"
                             android:textStyle="bold"
                             android:textSize="17sp" />
@@ -200,7 +200,7 @@
                             android:id="@+id/music_title3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Girls Never Die"
+                            android:text="Lose You To Love Me"
                             android:textColor="@color/black"
                             android:textSize="20sp"
                             android:layout_marginBottom="10dp" />
@@ -209,7 +209,7 @@
                             android:id="@+id/music_singer3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TripleS"
+                            android:text="Selena Gomez"
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:layout_marginBottom="20dp" />

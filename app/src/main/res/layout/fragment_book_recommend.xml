@@ -95,17 +95,16 @@
                             android:id="@+id/book_title1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="어린왕자"
+                            android:text="ETS 토익 정기시험 기출문제집"
                             android:textColor="@color/black"
                             android:textSize="20sp"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"/>
+                            android:layout_marginBottom="10dp" />
 
                         <TextView
-                            android:id="@+id/book_singer1"
+                            android:id="@+id/book_writter1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="누가 썼지"
+                            android:text="ETS (엮은이)"
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:layout_marginBottom="20dp"/>
@@ -114,7 +113,7 @@
                             android:id="@+id/tag1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="분노"
+                            android:text="시험"
                             android:textColor="#D7567F"
                             android:textStyle="bold"
                             android:textSize="17sp" />
@@ -152,16 +151,16 @@
                             android:id="@+id/book_title2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Girls Never Die"
+                            android:text="처음부터 시작하는 주식투자 단타전략"
                             android:textColor="@color/black"
                             android:textSize="20sp"
                             android:layout_marginBottom="10dp" />
 
                         <TextView
-                            android:id="@+id/book_singer2"
+                            android:id="@+id/book_writter2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TripleS"
+                            android:text="홍인기 (지은이)"
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:layout_marginBottom="20dp"
@@ -171,7 +170,7 @@
                             android:id="@+id/tag2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="분노"
+                            android:text="시작"
                             android:textColor="#D7567F"
                             android:textStyle="bold"
                             android:textSize="17sp" />
@@ -209,16 +208,16 @@
                             android:id="@+id/book_title3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Girls Never Die"
+                            android:text="분노하라"
                             android:textColor="@color/black"
                             android:textSize="20sp"
                             android:layout_marginBottom="10dp" />
 
                         <TextView
-                            android:id="@+id/book_singer3"
+                            android:id="@+id/book_writter3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TripleS"
+                            android:text="스테판 에셀 (지은이), 임희근 (옮긴이)"
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:layout_marginBottom="20dp"/>
